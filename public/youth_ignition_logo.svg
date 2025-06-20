@@ -1,0 +1,102 @@
+<svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle for depth -->
+  <circle cx="200" cy="180" r="120" fill="#f8faff" opacity="0.5"/>
+  
+  <!-- Torch handle with gradient -->
+  <defs>
+    <linearGradient id="torchGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="flameGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="handGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f4a261;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e76f51;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4613a;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Drop shadow -->
+    <filter id="dropshadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Main torch handle -->
+  <path d="M 180 280 L 180 320 L 185 325 L 190 340 L 195 355 L 200 365 L 205 355 L 210 340 L 215 325 L 220 320 L 220 280 Z" 
+        fill="url(#torchGradient)" filter="url(#dropshadow)"/>
+  
+  <!-- Torch top with modern design -->
+  <ellipse cx="200" cy="280" rx="25" ry="12" fill="url(#torchGradient)"/>
+  <rect x="175" y="275" width="50" height="10" rx="5" fill="#1e3a8a"/>
+  <rect x="178" y="270" width="44" height="8" rx="4" fill="#3b82f6"/>
+  
+  <!-- Dynamic flame with multiple layers -->
+  <path d="M 200 280 Q 185 260 190 240 Q 195 220 185 200 Q 180 180 190 160 Q 200 140 210 160 Q 220 180 215 200 Q 205 220 210 240 Q 215 260 200 280" 
+        fill="url(#flameGradient)" filter="url(#glow)" opacity="0.9"/>
+  
+  <!-- Inner flame for depth -->
+  <path d="M 200 275 Q 190 255 195 235 Q 200 215 190 195 Q 185 175 195 155 Q 205 145 210 165 Q 215 185 210 205 Q 205 225 210 245 Q 210 265 200 275" 
+        fill="#fbbf24" opacity="0.7"/>
+  
+  <!-- Flame highlight -->
+  <path d="M 200 270 Q 195 250 200 230 Q 205 210 200 190 Q 195 170 200 160 Q 205 155 207 170 Q 210 190 205 210 Q 200 230 205 250 Q 205 265 200 270" 
+        fill="#fef3c7" opacity="0.8"/>
+  
+  <!-- Modern hand design - more stylized -->
+  <g transform="translate(200, 320)">
+    <!-- Left hand -->
+    <path d="M -45 20 Q -50 15 -55 20 L -58 25 Q -60 30 -55 35 L -45 45 Q -40 50 -35 45 L -25 35 Q -20 30 -25 25 L -30 20 Q -35 15 -40 20 Z" 
+          fill="url(#handGradient)" filter="url(#dropshadow)"/>
+    
+    <!-- Right hand -->
+    <path d="M 45 20 Q 50 15 55 20 L 58 25 Q 60 30 55 35 L 45 45 Q 40 50 35 45 L 25 35 Q 20 30 25 25 L 30 20 Q 35 15 40 20 Z" 
+          fill="url(#handGradient)" filter="url(#dropshadow)"/>
+    
+    <!-- Hand connection/grip detail -->
+    <ellipse cx="0" cy="35" rx="15" ry="8" fill="#d4613a" opacity="0.8"/>
+    
+    <!-- Spark elements around hands -->
+    <circle cx="-35" cy="15" r="2" fill="#fbbf24" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="40" cy="12" r="1.5" fill="#f97316" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="-25" cy="50" r="1" fill="#fbbf24" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Brand name with modern typography -->
+  <text x="200" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" 
+        fill="#1e3a8a" letter-spacing="2px">YOUTH IGNITION HUB</text>
+  
+  <!-- Tagline -->
+  <text x="200" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="300" 
+        fill="#64748b" letter-spacing="3px">SPARKING POTENTIAL</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="120" cy="430" r="2" fill="#f97316" opacity="0.6">
+    <animate attributeName="r" values="2;3;2" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="280" cy="430" r="1.5" fill="#fbbf24" opacity="0.7">
+    <animate attributeName="r" values="1.5;2.5;1.5" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>

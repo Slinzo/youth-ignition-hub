@@ -1,22 +1,22 @@
 'use client'
 
-import { Carousel } from 'react-responsive-carousel'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { useState } from "react"
 import Link from 'next/link'
 
-export default function HomePage() {
+export default function AboutPage() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <main className="min-h-screen text-gray-800" style={{ backgroundColor: 'var(--background)', color: 'var(--foreground)' }}>
-
+    <main className="min-h-screen" style={{ backgroundColor: 'var(--background)', color: 'var(--foreground)' }}>
+      
       {/* NAVBAR */}
       <header className="shadow sticky top-0 z-50" style={{ backgroundColor: 'var(--color-light)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="text-xl font-bold" style={{ color: 'var(--color-primary)' }}>Youth Ignition Hub</div>
+            <div className="text-xl font-bold" style={{ color: 'var(--color-primary)' }}>
+              Youth Ignition Hub
+            </div>
 
             {/* Desktop Menu */}
             <nav className="hidden md:flex space-x-6">
@@ -60,48 +60,28 @@ export default function HomePage() {
         )}
       </header>
 
-      {/* HERO SECTION */}
+      {/* ABOUT SECTION */}
       <section className="text-center py-10 px-4" style={{ backgroundColor: 'var(--color-light)' }}>
-        <Carousel
-          autoPlay
-          infiniteLoop
-          showThumbs={false}
-          showStatus={false}
-          interval={3000}
-          className="w-full max-h-[700px] overflow-hidden"
-        >
-          {[
-            { src: '/spark1.jpg', alt: 'Spark' },
-            { src: '/forge1.jpg', alt: 'Forge' },
-            { src: '/flame1.jpg', alt: 'Flame' },
-            { src: '/blaze1.jpg', alt: 'Blaze' },
-            { src: '/wildfire3.jpg', alt: 'Wild Fire' },
-          ].map(({ src, alt }) => (
-            <div key={alt}>
-              <img src={src} alt={alt} />
-              <p className="legend">{alt}</p>
-            </div>
-          ))}
-        </Carousel>
-      </section>
+        <h1 className="text-4xl font-bold mb-8" style={{ color: 'var(--color-primary)' }}>
+          About Youth Ignition Hub
+        </h1>
 
-      {/* MISSION */}
-      <section className="py-16 px-6 text-center max-w-4xl mx-auto rounded-lg shadow"
-        style={{ backgroundColor: '#f9f9f9' }}
-      >
-        <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--color-primary)' }}>
-          Our Mission
-        </h2>
-       <p className="text-lg leading-relaxed" style={{ color: 'var(--color-earth)' }}>
-          We exist to equip young adults with skills to navigate life transitions, live and lead
-          with purpose, and become resourceful citizens — transforming the continent and the world
-          one life at a time.
-      </p>
-      </section>
+        <p className="text-lg leading-relaxed mb-8 text-center max-w-3xl mx-auto" style={{ color: 'var(--color-dark)' }}>
+          Youth Ignition Hub is a Christ-centered nonprofit focused on igniting purpose,
+          building resilience, and equipping young Africans with life, leadership,
+          and entrepreneurial skills. Our goal is to raise a generation that transforms
+          barriers into launchpads and leads with intention and impact.
+        </p>
 
+        <div className="p-6 rounded-lg shadow mb-12 text-center max-w-3xl mx-auto" style={{ backgroundColor: '#f3f4f6' }}>
+          <p className="text-xl font-semibold mb-2" style={{ color: 'var(--color-dark)' }}>
+            “Ignite Purpose. Impact Communities. Transform Africa.”
+          </p>
+          <p className="text-gray-600">
+            Empowering youth to discover their God-given potential and lead with purpose.
+          </p>
+        </div>
 
-      {/* PROGRAM PREVIEW */}
-      <section className="py-16 px-6" style={{ backgroundColor: '#f9fafb' }}>
         <h2 className="text-3xl font-bold text-center mb-10" style={{ color: 'var(--color-dark)' }}>
           Our 5 Ignition Pathways
         </h2>
@@ -126,15 +106,6 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-      </section>
-
-      {/* CTA SECTION */}
-      <section className="py-16 px-6 text-center" style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}>
-        <h2 className="text-3xl font-bold mb-4">Ready to Ignite Your Purpose?</h2>
-        <p className="mb-6 text-lg">
-          Join the Youth Ignition Hub family and connect with us.
-        </p>
-
       </section>
     </main>
   )

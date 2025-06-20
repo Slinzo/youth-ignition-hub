@@ -1,17 +1,25 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Custom Color Variables */
 :root {
+  --color-primary: #1e3a8a;   /* Blue */
+  --color-accent: #f97316;   /* Orange */
+  --color-danger: #ef4444;   /* Red */
+  --color-earth: #8B5E3C;    /* Brown */
+  --color-dark: #111827;     /* Black */
+  --color-light: #ffffff;    /* White */
+
   --background: #ffffff;
   --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -20,7 +28,7 @@
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
