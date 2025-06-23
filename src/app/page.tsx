@@ -16,7 +16,17 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="text-xl font-bold" style={{ color: 'var(--color-primary)' }}>Youth Ignition Hub</div>
+            <div className="flex items-center space-x-2">
+              <img
+                src="/Handover1.png" // Make sure this path is correct
+                alt="Youth Ignition Hub Logo"
+                className="h-8 w-8" // Adjust size if needed
+              />
+              <span className="text-xl font-bold" style={{ color: 'var(--color-primary)' }}>
+                Youth Ignition Hub
+              </span>
+            </div>
+
 
             {/* Desktop Menu */}
             <nav className="hidden md:flex space-x-6">
@@ -61,33 +71,23 @@ export default function HomePage() {
       </header>
 
       {/* HERO SECTION */}
-      <section className="text-center py-10 px-4" style={{ backgroundColor: 'var(--color-light)' }}>
-        <Carousel
-          autoPlay
-          infiniteLoop
-          showThumbs={false}
-          showStatus={false}
-          interval={3000}
-          className="w-full max-h-[700px] overflow-hidden"
-        >
-          {[
-            { src: '/spark1.jpg', alt: 'Spark' },
-            { src: '/forge1.jpg', alt: 'Forge' },
-            { src: '/flame1.jpg', alt: 'Flame' },
-            { src: '/blaze1.jpg', alt: 'Blaze' },
-            { src: '/wildfire3.jpg', alt: 'Wild Fire' },
-          ].map(({ src, alt }) => (
-            <div key={alt}>
-              <img src={src} alt={alt} />
-              <p className="legend">{alt}</p>
-            </div>
-          ))}
-        </Carousel>
+      <section className="text-center py-0 px-4" style={{ backgroundColor: 'var(--color-light)' }}>
+        <div className="w-full max-h-[700px] overflow-hidden">
+          <img
+            src="/girl.jpg"  
+            alt="Hero"
+            className="mx-auto rounded-lg shadow-lg max-w-full h-auto"
+          />
+          <p className="mt-4 text-lg font-semibold" style={{ color: 'var(--color-primary)' }}>
+            Spark
+          </p>
+        </div>
       </section>
+
 
       {/* MISSION */}
       <section className="py-16 px-6 text-center max-w-4xl mx-auto rounded-lg shadow"
-        style={{ backgroundColor: '#f9f9f9' }}
+        style={{ backgroundColor: 'var(--background)' }}
       >
         <h2 className="text-3xl font-bold mb-4" style={{ color: 'var(--color-primary)' }}>
           Our Mission
@@ -136,6 +136,48 @@ export default function HomePage() {
         </p>
 
       </section>
+{/* FOOTER */}
+<footer className="bg-gray-900 text-white py-10 px-6">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
+    {/* Logo and Tagline */}
+    <div className="col-span-2">
+      <div className="flex items-center space-x-2 mb-2">
+        <img src="/Handover1.png" alt="Logo" className="h-8 w-8" />
+        <span className="text-lg font-bold">Youth Ignition Hub</span>
+      </div>
+      <p className="text-gray-400">
+        Ignite Potential. Impact Communities. Transform the World.
+      </p>
+    </div>
+
+    {/* Quick Links */}
+    <div>
+      <h4 className="font-semibold mb-2">Quick Links</h4>
+      <ul className="space-y-1">
+        <li><a href="/" className="hover:underline text-gray-300">Home</a></li>
+        <li><a href="/about" className="hover:underline text-gray-300">About</a></li>
+        <li><a href="#" className="hover:underline text-gray-300">Programs</a></li>
+        <li><a href="#" className="hover:underline text-gray-300">Contact</a></li>
+      </ul>
+    </div>
+
+    {/* Contact Info */}
+    <div>
+      <h4 className="font-semibold mb-2">Contact</h4>
+      <ul className="text-gray-400 space-y-1">
+        <li>Email: <a href="mailto:info@youthignitionhub.org" className="hover:underline">info@youthignitionhub.org</a></li>
+        <li>Phone: +268 7646 6635</li>
+        <li>Location: Mbabane, ESW</li>
+      </ul>
+    </div>
+  </div>
+
+  {/* Divider */}
+  <div className="border-t border-gray-700 mt-8 pt-4 text-center text-gray-500 text-xs">
+    &copy; {new Date().getFullYear()} Youth Ignition Hub. All rights reserved.
+  </div>
+</footer>
+
     </main>
   )
 }
