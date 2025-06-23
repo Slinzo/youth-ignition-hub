@@ -29,8 +29,8 @@ export default function AboutPage() {
             <nav className="hidden md:flex space-x-6">
               <Link href="/" className="hover:underline" style={{ color: 'var(--color-dark)' }}>Home</Link>
               <Link href="/about" className="hover:underline" style={{ color: 'var(--color-dark)' }}>About</Link>
-              <a href="#" className="hover:underline" style={{ color: 'var(--color-dark)' }}>Programs</a>
-              <a href="#" className="hover:underline" style={{ color: 'var(--color-dark)' }}>Contact</a>
+              <Link href="#" className="hover:underline" style={{ color: 'var(--color-dark)' }}>Programs</Link>
+              <Link href="#" className="hover:underline" style={{ color: 'var(--color-dark)' }}>Contact</Link>
             </nav>
 
             {/* CTA Button */}

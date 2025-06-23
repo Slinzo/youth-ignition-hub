@@ -1,7 +1,5 @@
 'use client'
 
-import { Carousel } from 'react-responsive-carousel'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { useState } from "react"
 import Link from 'next/link'
 
@@ -32,8 +30,8 @@ export default function HomePage() {
             <nav className="hidden md:flex space-x-6">
               <Link href="/" className="hover:underline" style={{ color: 'var(--color-dark)' }}>Home</Link>
               <Link href="/about" className="hover:underline" style={{ color: 'var(--color-dark)' }}>About</Link>
-              <a href="#" className="hover:underline" style={{ color: 'var(--color-dark)' }}>Programs</a>
-              <a href="#" className="hover:underline" style={{ color: 'var(--color-dark)' }}>Contact</a>
+              <Link href="#" className="hover:underline" style={{ color: 'var(--color-dark)' }}>Programs</Link>
+              <Link href="#" className="hover:underline" style={{ color: 'var(--color-dark)' }}>Contact</Link>
             </nav>
 
             {/* CTA Button */}
