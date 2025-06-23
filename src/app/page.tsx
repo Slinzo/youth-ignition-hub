@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from "react"
 import Link from 'next/link'
 
@@ -24,7 +23,6 @@ export default function HomePage() {
                 Youth Ignition Hub
               </span>
             </div>
-
 
             {/* Desktop Menu */}
             <nav className="hidden md:flex space-x-6">
@@ -59,8 +57,9 @@ export default function HomePage() {
           <div className="md:hidden px-4 py-4 space-y-2" style={{ backgroundColor: 'var(--color-light)' }}>
             <Link href="/" className="block hover:underline" style={{ color: 'var(--color-dark)' }}>Home</Link>
             <Link href="/about" className="block hover:underline" style={{ color: 'var(--color-dark)' }}>About</Link>
-            <a href="#" className="block hover:underline" style={{ color: 'var(--color-dark)' }}>Programs</a>
-            <a href="#" className="block hover:underline" style={{ color: 'var(--color-dark)' }}>Contact</a>
+            <Link href="#" className="block hover:underline" style={{ color: 'var(--color-dark)' }}>Programs</Link>
+            <Link href="#" className="block hover:underline" style={{ color: 'var(--color-dark)' }}>Contact</Link>
+
             <button className="w-full px-4 py-2 rounded transition" style={{ backgroundColor: 'var(--color-accent)', color: 'white' }}>
               Apply Now
             </button>
@@ -152,10 +151,10 @@ export default function HomePage() {
     <div>
       <h4 className="font-semibold mb-2">Quick Links</h4>
       <ul className="space-y-1">
-        <li><a href="/" className="hover:underline text-gray-300">Home</a></li>
-        <li><a href="/about" className="hover:underline text-gray-300">About</a></li>
-        <li><a href="#" className="hover:underline text-gray-300">Programs</a></li>
-        <li><a href="#" className="hover:underline text-gray-300">Contact</a></li>
+        <li><Link href="/" className="hover:underline" style={{ color: 'var(--color-dark)' }}>Home</Link></li>
+        <li><Link href="/about" className="hover:underline" style={{ color: 'var(--color-dark)' }}>About</Link></li>
+        <li><Link href="#" className="hover:underline" style={{ color: 'var(--color-dark)' }}>Programs</Link></li>
+        <li><Link href="#" className="hover:underline" style={{ color: 'var(--color-dark)' }}>Contact</Link></li>
       </ul>
     </div>
 
