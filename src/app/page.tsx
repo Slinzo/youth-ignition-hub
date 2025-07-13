@@ -1,67 +1,155 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from 'next/link'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+} from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
 
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false)
 
+  const handleApplyClick = () => {
+    alert("Thank you for your interest! Unfortunately, we are not taking applications at this moment.")
+  }
+
+  // Scroll-based animation
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fade-up")
+        }
+      })
+    }, { threshold: 0.1 })
+
+    const elements = document.querySelectorAll(".fade-section")
+    elements.forEach(el => observer.observe(el))
+
+    return () => elements.forEach(el => observer.unobserve(el))
+  }, [])
+
   return (
-    <main className="min-h-screen text-gray-800" style={{ backgroundColor: '#fdfaf6', color: '#1a1a1a' }}>
+    <main className="min-h-screen text-gray-800 bg-[#fdfaf6]">
 
       {/* NAVBAR */}
-      <header className="shadow sticky top-0 z-50" style={{ backgroundColor: '#092d43' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <img src="/Handover1.png" alt="Youth Ignition Hub Logo" className="h-8 w-8" />
-              <span className="text-xl font-bold text-white">Youth Ignition Hub</span>
-            </div>
-            <nav className="hidden md:flex space-x-6">
-              <Link href="/" className="hover:underline text-white">Home</Link>
-              <Link href="/about" className="hover:underline text-white">About</Link>
-              <Link href="#" className="hover:underline text-white">Programs</Link>
-              <Link href="#" className="hover:underline text-white">Contact</Link>
-            </nav>
-            <div className="hidden md:block">
-              <button className="px-4 py-2 rounded transition" style={{ backgroundColor: '#d9373f', color: 'white' }}>Apply Now</button>
-            </div>
-            <div className="md:hidden">
-              <button onClick={() => setMenuOpen(!menuOpen)} className="focus:outline-none text-white">☰</button>
+      <header className="backdrop-blur-sm bg-[#092d43]/50 sticky top-0 z-50 shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex justify-between items-center">
+          <div className="flex items-center space-x-4">
+            <img src="/Handover1.png" alt="Logo" className="h-16 w-16" />
+            <div className="flex flex-col leading-tight">
+              <span className="text-2xl font-bold text-white -mb-1">Youth Ignition Hub</span>
+              <span className="text-sm text-white tracking-wide">Ignite. Impact. Transform</span>
             </div>
           </div>
+
+          <nav className="hidden md:flex space-x-6 text-lg">
+            <Link href="/" className="text-white hover:underline">Home</Link>
+            <Link href="/about" className="text-white hover:underline">About</Link>
+            <Link href="/programs" className="text-white hover:underline">Programs</Link>
+            <Link href="#" className="text-white hover:underline">Contact</Link>
+          </nav>
+
+          <div className="hidden md:block">
+            <button
+              onClick={handleApplyClick}
+              className="px-5 py-2 text-white rounded bg-[#d9373f] hover:opacity-90"
+            >
+              Apply Now
+            </button>
+          </div>
+
+          <div className="md:hidden">
+            <button onClick={() => setMenuOpen(!menuOpen)} className="text-white text-3xl">☰</button>
+          </div>
         </div>
+
         {menuOpen && (
-          <div className="md:hidden px-4 py-4 space-y-2 bg-[#092d43]">
-            <Link href="/" className="block hover:underline text-white">Home</Link>
-            <Link href="/about" className="block hover:underline text-white">About</Link>
-            <Link href="#" className="block hover:underline text-white">Programs</Link>
-            <Link href="#" className="block hover:underline text-white">Contact</Link>
-            <button className="w-full px-4 py-2 rounded transition" style={{ backgroundColor: '#d9373f', color: 'white' }}>Apply Now</button>
+          <div className="md:hidden bg-[#092d43]/90 text-white px-4 py-4 space-y-3">
+            <Link href="/" className="block hover:underline">Home</Link>
+            <Link href="/about" className="block hover:underline">About</Link>
+            <Link href="/programs" className="block hover:underline">Programs</Link>
+            <Link href="#" className="block hover:underline">Contact</Link>
+            <button
+              onClick={handleApplyClick}
+              className="w-full bg-[#d9373f] text-white py-2 rounded"
+            >
+              Apply Now
+            </button>
           </div>
         )}
       </header>
 
-      {/* HERO SECTION */}
-      <section className="text-center py-0 px-4 bg-[#ffe3ca]">
-        <div className="w-full max-h-[700px] overflow-hidden">
-          <img src="/hero.jpg" alt="Hero" className="mx-auto rounded-lg shadow-lg max-w-full h-auto" />
-          <p className="mt-4 text-lg font-semibold text-[#ff9900]">Spark</p>
-        </div>
+
+      {/* HERO CAROUSEL */}
+      <section className="h-screen flex items-center top-0 justify-center text-center bg-[#c0c0c0]">
+        <Swiper
+          modules={[Autoplay, Pagination]}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 5000 }}
+          loop
+          className="w-full h-full"
+        >
+          {[
+            {
+              text: "Unleash your potential",
+              sub: "Empowering young minds",
+              image: "/hero.jpg",
+            },
+            {
+              text: "Lead with purpose",
+              sub: "Building the leaders of tomorrow",
+              image: "/girl.jpg",
+            },
+            {
+              text: "Ignite your journey",
+              sub: "Your future starts here",
+              image: "/world.avif",
+            },
+          ].map((slide, index) => (
+            <SwiperSlide key={index}>
+              <div
+                className="relative h-full w-full bg-cover bg-center"
+                style={{ backgroundImage: `url(${slide.image})` }}
+              >
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/50 z-10"></div>
+
+                {/* Content */}
+                <div className="relative z-20 h-full flex flex-col justify-center items-center text-white px-4">
+                  <h1 className="text-4xl md:text-6xl font-bold mb-4 fade-section">
+                    {slide.text}
+                  </h1>
+                  <p className="text-lg md:text-2xl fade-section">
+                    {slide.sub}
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
 
+
       {/* MISSION */}
-      <section className="py-16 px-6 text-center max-w-4xl mx-auto rounded-lg shadow-md" style={{ backgroundColor: '#fef6ed' }}>
-        <h2 className="text-3xl font-bold mb-4 text-[#cc6600]">Our Mission</h2>
-        <p className="text-lg leading-relaxed text-[#663300]">
-          We exist to equip young adults with skills to navigate life transitions, live and lead
-          with purpose, and become resourceful citizens — transforming the continent and the world
-          one life at a time.
+      <section className="py-20 px-4 bg-[#c0c0c0] text-center fade-section">
+        <h2 className="text-4xl font-bold text-[#222] mb-6">Attention here!!</h2>
+        <p className="text-xl text-[#222] leading-relaxed max-w-3xl mx-auto">
+          something captivating 
         </p>
       </section>
 
-      {/* PROGRAM PREVIEW */}
-      <section className="py-16 px-6 bg-[#f9fafb]">
+      {/* PROGRAMS */}
+      <section className="py-16 px-6 bg-[#c0c0c0] fade-section">
         <h2 className="text-3xl font-bold text-center mb-10 text-[#222]">Our 5 Ignition Pathways</h2>
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {[
@@ -83,42 +171,75 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      <section className="py-8 px-6 text-center" style={{ backgroundColor: '#cc6600', color: 'white' }}>
-        <h2 className="text-3xl font-bold mb-4">Ready to Ignite Your Purpose?</h2>
-        <p className="mb-6 text-lg">Join the Youth Ignition Hub family and connect with us.</p>
-        <div className="flex justify-center space-x-6 mt-4">
-          <div className="flex justify-center space-x-6 mt-4">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
-              <svg className="h-6 w-6 fill-white hover:fill-gray-300 transition" viewBox="0 0 24 24">
-                <path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 2 .2 2.5.4.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.5.3 1.3.4 2.5.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 2-.4 2.5-.2.6-.5 1-1 1.5-.5.5-.9.8-1.5 1-.5.2-1.3.3-2.5.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-2-.2-2.5-.4-.6-.2-1-.5-1.5-1-.5-.5-.8-.9-1-1.5-.2-.5-.3-1.3-.4-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-2 .4-2.5.2-.6.5-1 1-1.5.5-.5.9-.8 1.5-1 .5-.2 1.3-.3 2.5-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.3-.5.2-.9.4-1.2.7-.3.3-.5.7-.7 1.2-.1.4-.3 1-.3 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.3 2.1.2.5.4.9.7 1.2.3.3.7.5 1.2.7.4.1 1 .3 2.1.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.3.5-.2.9-.4 1.2-.7.3-.3.5-.7.7-1.2.1-.4.3-1 .3-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.3-2.1-.2-.5-.4-.9-.7-1.2-.3-.3-.7-.5-1.2-.7-.4-.1-1-.3-2.1-.3-1.2-.1-1.6-.1-4.7-.1zm0 3.6a5.2 5.2 0 1 1 0 10.4 5.2 5.2 0 0 1 0-10.4zm0 1.8a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8zm6.4-.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/>
-              </svg>
-            </a>
+      {/* REVIEWS */}
+      <section className="bg-[#c0c0c0] py-16 fade-section">
+        <h2 className="text-3xl font-bold text-center mb-12 text-[#092d43]">What People Are Saying</h2>
 
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
-              <svg className="h-6 w-6 fill-white hover:fill-gray-300 transition" viewBox="0 0 24 24">
-                <path d="M22 12c0-5.522-4.478-10-10-10S2 6.478 2 12c0 5.01 3.663 9.13 8.438 9.879V15.47h-2.54v-2.47h2.54v-1.882c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.462h-1.26c-1.243 0-1.63.771-1.63 1.562V13h2.773l-.443 2.47h-2.33v6.409C18.337 21.13 22 17.01 22 12z"/>
-              </svg>
-            </a>
+        <Swiper
+          modules={[Navigation, Autoplay, Pagination]}
+          navigation={{
+            nextEl: '.swiper-button-next-custom',
+            prevEl: '.swiper-button-prev-custom',
+          }}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 6000, disableOnInteraction: false }}
+          loop
+          className="relative max-w-4xl mx-auto"
+        >
+          {[
+            {
+              name: "Lebo Mokoena",
+              title: "Young Proffesioal",
+              image: "/blaze.jpg",
+              comment: "This program changed the way I view my future. The support and training were outstanding!",
+            },
+            {
+              name: "Thandi Ndlovu",
+              title: "Graduate",
+              image: "/blaze1.jpg",
+              comment: "Absolutely inspiring! I gained confidence and clarity on my journey.",
+            },
+            {
+              name: "Sibusiso Dlamini",
+              title: "Student",
+              image: "/cook.jpg",
+              comment: "Highly recommended to any young person trying to grow. The mentors are amazing!",
+            },
+          ].map((review, idx) => (
+            <SwiperSlide key={idx}>
+              <div className="bg-white rounded-xl p-8 mx-4 shadow-lg border-2 border-transparent hover:border-accent hover:shadow-2xl transition-all duration-500">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="w-24 h-24 rounded-full border-4 border-primary overflow-hidden shadow-lg">
+                    <img
+                      src={review.image}
+                      alt={review.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="text-lg text-gray-700 italic max-w-xl">"{review.comment}"</p>
+                  <div className="mt-4">
+                    <p className="font-semibold text-accent">{review.name}</p>
+                    <p className="text-sm text-earth">{review.title}</p>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
 
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter">
-              <svg className="h-6 w-6 fill-white hover:fill-gray-300 transition" viewBox="0 0 24 24">
-                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
-              </svg>
-            </a>
-
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" title="YouTube">
-              <svg className="h-6 w-6 fill-white hover:fill-gray-300 transition" viewBox="0 0 24 24">
-                <path d="M19.6 3H4.4C3.1 3 2 4.1 2 5.4v13.2C2 19.9 3.1 21 4.4 21h15.2c1.3 0 2.4-1.1 2.4-2.4V5.4C22 4.1 20.9 3 19.6 3zM10 15.5v-7l6 3.5-6 3.5z"/>
-              </svg>
-            </a>
-
+          {/* Custom Navigation Arrows */}
+          <div className="swiper-button-prev-custom absolute -left-10 top-1/2 transform -translate-y-1/2 bg-[#092d43] hover:bg-accent text-white p-2 rounded-full shadow-lg transition duration-300 z-10 cursor-pointer">
+            &#8592;
           </div>
-        </div>
+          <div className="swiper-button-next-custom absolute -right-10 top-1/2 transform -translate-y-1/2 bg-[#092d43] hover:bg-accent text-white p-2 rounded-full shadow-lg transition duration-300 z-10 cursor-pointer">
+            &#8594;
+          </div>
+        </Swiper>
       </section>
 
+
+
       {/* FOOTER */}
-      <footer className="bg-[#1a1a1a] text-white py-10 px-6">
+      <footer className="bg-[#1a1a1a] text-white pt-12 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
           <div className="col-span-2">
             <div className="flex items-center space-x-2 mb-2">
@@ -134,7 +255,7 @@ export default function HomePage() {
             <ul className="space-y-1">
               <li><Link href="/" className="text-gray-400 hover:underline">Home</Link></li>
               <li><Link href="/about" className="text-gray-400 hover:underline">About</Link></li>
-              <li><Link href="#" className="text-gray-400 hover:underline">Programs</Link></li>
+              <li><Link href="/programs" className="text-gray-400 hover:underline">Programs</Link></li>
               <li><Link href="#" className="text-gray-400 hover:underline">Contact</Link></li>
             </ul>
           </div>
@@ -143,15 +264,36 @@ export default function HomePage() {
             <ul className="text-gray-400 space-y-1">
               <li>Email: <a href="mailto:info@youthignitionhub.org" className="hover:underline">info@youthignitionhub.org</a></li>
               <li>Phone: +00 000 0000</li>
+              <li className="flex space-x-3 mt-4">
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-black text-blue-600 flex items-center justify-center hover:bg-blue-200 transition">
+                  <FaFacebookF />
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-black text-pink-500 flex items-center justify-center hover:bg-pink-200 transition">
+                  <FaInstagram />
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-700 transition">
+                  <FaXTwitter />
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-black text-blue-700 flex items-center justify-center hover:bg-blue-200 transition">
+                  <FaLinkedinIn />
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-black text-red-600 flex items-center justify-center hover:bg-red-200 transition">
+                  <FaYoutube />
+                </a>
+              </li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-gray-700 mt-8 pt-4 text-center text-gray-500 text-xs">
+        <div className="border-t border-gray-700 mt-8 py-4 text-center text-gray-500 text-xs">
           &copy; {new Date().getFullYear()} Youth Ignition Hub. All rights reserved.
         </div>
       </footer>
-
     </main>
   )
 }
-
+ 
