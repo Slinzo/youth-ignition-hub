@@ -216,7 +216,7 @@ export default function HomePage() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <p className="text-lg text-gray-700 italic max-w-xl">"{review.comment}"</p>
+                  <p className="text-lg text-gray-700 italic max-w-xl">&quot;{review.comment}&quot;</p>
                   <div className="mt-4">
                     <p className="font-semibold text-accent">{review.name}</p>
                     <p className="text-sm text-earth">{review.title}</p>
