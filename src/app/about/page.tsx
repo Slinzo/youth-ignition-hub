@@ -103,7 +103,7 @@ export default function AboutPage() {
       <section className="text-center py-10 px-4 fade-in opacity-0 translate-y-10 transition duration-700 ease-out">
         <div className="p-6 rounded-lg shadow mb-12 text-center max-w-3xl mx-auto" style={{ backgroundColor: '#f3f4f6' }}>
           <p className="text-xl font-semibold mb-2 text-[#092d43]">
-            “Ignite Purpose. Impact Communities. Transform Africa.”
+            &quot;Ignite Purpose. Impact Communities. Transform Africa.&quot;
           </p>
           <p className="text-gray-600">
             Empowering youth to discover their God-given potential and lead with purpose.
