@@ -87,8 +87,8 @@ export default function AboutPage() {
 
       {/* HERO SECTION */}
       <section
-        className="relative h-[90vh] flex items-center justify-center text-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/girl.jpg')" }}
+        className="relative h-[100vh] flex items-center justify-center text-center bg-cover bg-center"
+        style={{ backgroundImage: "url('/bottles.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 px-6 text-white max-w-3xl text-center">

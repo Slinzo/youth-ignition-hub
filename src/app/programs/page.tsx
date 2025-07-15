@@ -108,7 +108,16 @@ export default function AboutPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-[#c0c0c0] text-center text-gray-900">
+    <main className="min-h-screen relative text-center text-gray-900">
+    {/* Background Image with Dim Overlay */}
+    <div
+      className="absolute inset-0 bg-cover bg-center"
+      style={{
+        backgroundImage: `url('/fire.jpg')`,
+        filter: 'brightness(50%)', // dims the image
+        zIndex: -1
+      }}
+    ></div>
       {/* NAVBAR */}
       <header className="backdrop-blur-sm bg-[#092d43]/60 sticky top-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex justify-between items-center">
@@ -154,8 +163,8 @@ export default function AboutPage() {
 
       {/* HERO SECTION */}
       <section
-        className="relative h-[80vh] flex items-center justify-center text-center bg-cover bg-center mb-10"
-        style={{ backgroundImage: "url('/girl.jpg')" }}
+        className="relative h-[100vh] flex items-center justify-center text-center bg-cover bg-center mb-10"
+        style={{ backgroundImage: "url('/tent.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 px-6 text-white max-w-3xl">

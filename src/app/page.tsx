@@ -103,17 +103,17 @@ export default function HomePage() {
             {
               text: "Unleash your potential",
               sub: "Empowering young minds",
-              image: "/hero.jpg",
+              image: "/gd.jpg",
             },
             {
               text: "Lead with purpose",
               sub: "Building the leaders of tomorrow",
-              image: "/girl.jpg",
+              image: "/group1.jpg",
             },
             {
               text: "Ignite your journey",
               sub: "Your future starts here",
-              image: "/world.avif",
+              image: "/bgr.jpg",
             },
           ].map((slide, index) => (
             <SwiperSlide key={index}>
@@ -141,22 +141,22 @@ export default function HomePage() {
 
 
       {/* MISSION */}
-      <section className="py-20 px-4 bg-[#c0c0c0] text-center fade-section">
-        <h2 className="text-4xl font-bold text-[#222] mb-6">Attention here!!</h2>
-        <p className="text-xl text-[#222] leading-relaxed max-w-3xl mx-auto">
+      <section className="py-20 px-4 bg-[#d16500] text-center fade-section">
+        <h2 className="text-4xl font-bold text-[white] mb-6">Attention here!!</h2>
+        <p className="text-xl text-[white] leading-relaxed max-w-3xl mx-auto">
           something captivating 
         </p>
       </section>
 
       {/* PROGRAMS */}
-      <section className="py-16 px-6 bg-[#c0c0c0] fade-section">
+      <section className="py-16 px-6 fade-section">
         <h2 className="text-3xl font-bold text-center mb-10 text-[#222]">Our 5 Ignition Pathways</h2>
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {[
             { title: 'SPARK', desc: 'Purpose Discovery & Self-Awareness', image: '/light.jpg', gradient: 'from-[#281C2D] to-[#000]' },
             { title: 'FORGE', desc: 'Essential Life Skills', image: '/cook.jpg', gradient: 'from-yellow-700 to-orange-400' },
             { title: 'FLAME', desc: 'Financial & Legal Literacy', image: '/money.jpg', gradient: 'from-red-900 to-red-500' },
-            { title: 'BLAZE', desc: 'Entrepreneurship & Self-Development', image: '/team.png', gradient: 'from-blue-900 to-blue-400' },
+            { title: 'BLAZE', desc: 'Entrepreneurship & Self-Development', image: '/group4.jpg', gradient: 'from-blue-900 to-blue-400' },
             { title: 'WILDFIRE', desc: 'Community & Global Impact', image: '/world.avif', gradient: 'from-orange-800 to-yellow-500' },
           ].map(({ title, desc, image, gradient }) => (
             <a key={title} href="#" className="relative group block rounded-xl overflow-hidden shadow-lg h-72 md:h-80 w-full" tabIndex={0}>
@@ -172,8 +172,8 @@ export default function HomePage() {
       </section>
 
       {/* REVIEWS */}
-      <section className="bg-[#c0c0c0] py-16 fade-section">
-        <h2 className="text-3xl font-bold text-center mb-12 text-[#092d43]">What People Are Saying</h2>
+      <section className="bg-[#0f3f66] py-16 fade-section">
+        <h2 className="text-3xl font-bold text-center mb-12 text-[white]">What People Are Saying</h2>
 
         <Swiper
           modules={[Navigation, Autoplay, Pagination]}
@@ -190,13 +190,13 @@ export default function HomePage() {
             {
               name: "Lebo Mokoena",
               title: "Young Proffesioal",
-              image: "/blaze.jpg",
+              image: "/tent.jpg",
               comment: "This program changed the way I view my future. The support and training were outstanding!",
             },
             {
               name: "Thandi Ndlovu",
               title: "Graduate",
-              image: "/blaze1.jpg",
+              image: "/tz.jpg",
               comment: "Absolutely inspiring! I gained confidence and clarity on my journey.",
             },
             {
