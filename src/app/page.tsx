@@ -103,18 +103,68 @@ export default function HomePage() {
             {
               text: "Unleash your potential",
               sub: "Empowering young minds",
-              image: "/gd.jpg",
+              image: "/96.jpg",
             },
             {
               text: "Lead with purpose",
               sub: "Building the leaders of tomorrow",
-              image: "/group1.jpg",
+              image: "/208.jpg",
             },
             {
               text: "Ignite your journey",
               sub: "Your future starts here",
-              image: "/bgr.jpg",
+              image: "/547.jpg",
             },
+            {
+              text: "Unleash your potential",
+              sub: "Empowering young minds",
+              image: "/571.jpg",
+            },
+            {
+              text: "Lead with purpose",
+              sub: "Building the leaders of tomorrow",
+              image: "/582.jpg",
+            },
+            {
+              text: "Ignite your journey",
+              sub: "Your future starts here",
+              image: "/604.jpg",
+            },
+            {
+              text: "Unleash your potential",
+              sub: "Empowering young minds",
+              image: "/659.jpg",
+            },
+            {
+              text: "Lead with purpose",
+              sub: "Building the leaders of tomorrow",
+              image: "/681.jpg",
+            },
+            {
+              text: "Ignite your journey",
+              sub: "Your future starts here",
+              image: "/743.jpg",
+            },
+            {
+              text: "Unleash your potential",
+              sub: "Empowering young minds",
+              image: "/799.jpg",
+            },
+            {
+              text: "Lead with purpose",
+              sub: "Building the leaders of tomorrow",
+              image: "/819.jpg",
+            },
+            {
+              text: "Ignite your journey",
+              sub: "Your future starts here",
+              image: "/853.jpg",
+            }, 
+            {
+              text: "Ignite your journey",
+              sub: "Your future starts here",
+              image: "/885.jpg",
+            }, 
           ].map((slide, index) => (
             <SwiperSlide key={index}>
               <div
@@ -265,23 +315,23 @@ export default function HomePage() {
               <li>Email: <a href="mailto:info@youthignitionhub.org" className="hover:underline">info@youthignitionhub.org</a></li>
               <li>Phone: +00 000 0000</li>
               <li className="flex space-x-3 mt-4">
-                <a href="#" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-black text-blue-600 flex items-center justify-center hover:bg-blue-200 transition">
                   <FaFacebookF />
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-black text-pink-500 flex items-center justify-center hover:bg-pink-200 transition">
                   <FaInstagram />
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer"
+                <a href="https://x.com/?lang=en-za" target="_blank" rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-700 transition">
                   <FaXTwitter />
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-black text-blue-700 flex items-center justify-center hover:bg-blue-200 transition">
                   <FaLinkedinIn />
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-black text-red-600 flex items-center justify-center hover:bg-red-200 transition">
                   <FaYoutube />
                 </a>
