@@ -45,7 +45,7 @@ export default function HomePage() {
       <header className="backdrop-blur-sm bg-[#092d43]/50 sticky top-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex justify-between items-center">
           <div className="flex items-center space-x-4">
-            <img src="/Handover1.png" alt="Logo" className="h-16 w-16" />
+            <img src="/Handover1.png" alt="Logo" className="h-26 w-26" />
             <div className="flex flex-col leading-tight">
               <span className="text-2xl font-bold text-white -mb-1">Youth Ignition Hub</span>
               <span className="text-sm text-white tracking-wide">Ignite. Impact. Transform</span>
