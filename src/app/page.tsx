@@ -91,7 +91,7 @@ export default function HomePage() {
 
 
       {/* HERO CAROUSEL */}
-      <section className="h-screen flex items-center top-0 justify-center text-center bg-[#c0c0c0]">
+      <section className="h-screen -mt-[95px] flex items-center justify-center text-center bg-[#c0c0c0]">
         <Swiper
           modules={[Autoplay, Pagination]}
           pagination={{ clickable: true }}
@@ -101,70 +101,86 @@ export default function HomePage() {
         >
           {[
             {
-              text: "Unleash your potential",
+              text: " Igniting Africa’s Purpose Driven Leaders",
               sub: "Empowering young minds",
-              image: "/96.jpg",
-            },
-            {
-              text: "Lead with purpose",
-              sub: "Building the leaders of tomorrow",
-              image: "/208.jpg",
-            },
-            {
-              text: "Ignite your journey",
-              sub: "Your future starts here",
-              image: "/547.jpg",
-            },
-            {
-              text: "Unleash your potential",
-              sub: "Empowering young minds",
-              image: "/571.jpg",
-            },
-            {
-              text: "Lead with purpose",
-              sub: "Building the leaders of tomorrow",
-              image: "/582.jpg",
-            },
-            {
-              text: "Ignite your journey",
-              sub: "Your future starts here",
-              image: "/604.jpg",
-            },
-            {
-              text: "Unleash your potential",
-              sub: "Empowering young minds",
-              image: "/659.jpg",
-            },
-            {
-              text: "Lead with purpose",
-              sub: "Building the leaders of tomorrow",
               image: "/681.jpg",
             },
             {
+              text: "Lead with purpose",
+              sub: "Building the leaders of tomorrow",
+              image: "/571c.jpg",
+            },
+            {
               text: "Ignite your journey",
               sub: "Your future starts here",
-              image: "/743.jpg",
+              image: "/582c.jpg", 
             },
             {
               text: "Unleash your potential",
               sub: "Empowering young minds",
-              image: "/799.jpg",
+              image: "/604.jpg",
             },
             {
               text: "Lead with purpose",
               sub: "Building the leaders of tomorrow",
-              image: "/819.jpg",
+              image: "/877.jpg",
             },
             {
               text: "Ignite your journey",
               sub: "Your future starts here",
-              image: "/853.jpg",
+              image: "/208c.jpg",
+            },
+            {
+              text: "Unleash your potential",
+              sub: "Empowering young minds",
+              image: "/96c.jpg", 
+            },
+            {
+              text: "Lead with purpose",
+              sub: "Building the leaders of tomorrow",
+              image: "/743c.jpg",
+            },
+            {
+              text: "Ignite your journey",
+              sub: "Your future starts here",
+              image: "/799c.jpg",
+            },
+            {
+              text: "Unleash your potential",
+              sub: "Empowering young minds",
+              image: "/616c.jpg",
+            },
+            {
+              text: "Lead with purpose",
+              sub: "Building the leaders of tomorrow",
+              image: "/853c.jpg", 
+            },
+            {
+              text: "Ignite your journey",
+              sub: "Your future starts here",
+              image: "/686c.jpg",
+            }, 
+            {
+              text: "Ignite your journey",
+              sub: "Empowering young minds",
+              image: "/863c.jpg",
+            }, 
+            {
+              text: "Ignite your journey",
+              sub: "Building the leaders of tomorrow",
+              image: "/607c.jpg",
             }, 
             {
               text: "Ignite your journey",
               sub: "Your future starts here",
-              image: "/885.jpg",
+              image: "/550c.jpg",
             }, 
+            {
+              text: "Ignite your journey",
+              sub: "Empowering young minds",
+              image: "/882.jpg",
+            }, 
+
           ].map((slide, index) => (
             <SwiperSlide key={index}>
               <div
@@ -191,35 +207,132 @@ export default function HomePage() {
 
 
       {/* MISSION */}
-      <section className="py-20 px-4 bg-[#d16500] text-center fade-section">
-        <h2 className="text-4xl font-bold text-[white] mb-6">Attention here!!</h2>
-        <p className="text-xl text-[white] leading-relaxed max-w-3xl mx-auto">
-          something captivating 
-        </p>
+      <section className="relative pt-80 pb-10 px-4 text-center fade-section">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/3.jpg')" }}></div>
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+
+        {/* Optional Bottom Gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-0"></div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-white mb-8"></h2>
+
+          <p className="text-xl text-white leading-relaxed max-w-3xl mx-auto drop-shadow-md">
+            Youth Ignition Hub seeks to ignite leaders whose personal growth and entrepreneurial vision will illuminate nations.
+          </p>
+        </div>
       </section>
+      
 
       {/* PROGRAMS */}
       <section className="py-16 px-6 fade-section">
         <h2 className="text-3xl font-bold text-center mb-10 text-[#222]">Our 5 Ignition Pathways</h2>
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {[
-            { title: 'SPARK', desc: 'Purpose Discovery & Self-Awareness', image: '/light.jpg', gradient: 'from-[#281C2D] to-[#000]' },
-            { title: 'FORGE', desc: 'Essential Life Skills', image: '/cook.jpg', gradient: 'from-yellow-700 to-orange-400' },
-            { title: 'FLAME', desc: 'Financial & Legal Literacy', image: '/money.jpg', gradient: 'from-red-900 to-red-500' },
-            { title: 'BLAZE', desc: 'Entrepreneurship & Self-Development', image: '/group4.jpg', gradient: 'from-blue-900 to-blue-400' },
-            { title: 'WILDFIRE', desc: 'Community & Global Impact', image: '/world.avif', gradient: 'from-orange-800 to-yellow-500' },
-          ].map(({ title, desc, image, gradient }) => (
-            <a key={title} href="#" className="relative group block rounded-xl overflow-hidden shadow-lg h-72 md:h-80 w-full" tabIndex={0}>
-              <div className="w-full h-full bg-cover bg-center transition-transform duration-300 scale-100 group-hover:scale-105" style={{ backgroundImage: `url(${image})` }}></div>
-              <div className={`absolute inset-0 bg-gradient-to-b ${gradient} opacity-0 group-hover:opacity-90 group-focus:opacity-90 transition-opacity duration-300`}></div>
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 p-4">
+            {
+              title: "SPARK",
+              subtitle: "Purpose Discovery & Self-Awareness",
+              objective:
+                "Discover God-given purpose, develop a life purpose statement, enhance self-awareness, and learn goal-setting strategies.",
+              concepts: [
+                "Self-assessment and reflection",
+                "Emotional intelligence",
+                "Goal setting and time management",
+                "Career planning",
+              ],
+              image: "/light.jpg",
+              gradient: "from-[#281C2D] to-[#000]",
+            },
+            {
+              title: "FORGE",
+              subtitle: "Essential Life Skills",
+              objective:
+                "Equip students with essential skills for independent living to improve competence, self-sufficiency, and confidence.",
+              concepts: [
+                "Grocery shopping and meal planning",
+                "Cooking simple healthy meals",
+                "Managing a household / handyman basics",
+                "Navigating transportation systems",
+              ],
+              image: "/cook.jpg",
+              gradient: "from-yellow-700 to-orange-400",
+            },
+            {
+              title: "FLAME",
+              subtitle: "Financial & Legal Literacy",
+              objective:
+                "Equip students with principles of money stewardship, basic financial concepts, and legal understanding.",
+              concepts: [
+                "Budgeting and saving",
+                "Understanding taxes, credit and investments",
+                "Avoiding debts and managing loans",
+                "Understanding law",
+              ],
+              image: "/money.jpg",
+              gradient: "from-red-900 to-red-500",
+            },
+            {
+              title: "BLAZE",
+              subtitle: "Entrepreneurship & Self-Development",
+              objective:
+                "Introduce students to essential business topics, communication, and personal development.",
+              concepts: [
+                "Leading with Kingdom values",
+                "Fostering entrepreneurial thinking",
+                "Building emotional intelligence and social skills",
+                "Starting and running an organisation",
+              ],
+              image: "/group4.jpg",
+              gradient: "from-blue-900 to-blue-400",
+            },
+            {
+              title: "WILDFIRE",
+              subtitle: "Community & Global Impact",
+              objective:
+                "Introduce learners to concepts of social responsibility and mentorship.",
+              concepts: [
+                "Social and environmental responsibility",
+                "Understanding community challenges",
+                "Stakeholder awareness",
+                "Mentorship",
+              ],
+              image: "/world.avif",
+              gradient: "from-orange-800 to-yellow-500",
+            },
+          ].map(({ title, subtitle, objective, concepts, image, gradient }) => (
+            <div
+              key={title}
+              className="relative group block rounded-xl overflow-hidden shadow-lg h-auto w-full transform transition-transform duration-300 hover:scale-105"
+            >
+              {/* Background image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${image})` }}
+              ></div>
+
+              {/* Gradient overlay (always visible) */}
+              <div className={`absolute inset-0 bg-gradient-to-b ${gradient} opacity-80`}></div>
+
+              {/* Content */}
+              <div className="relative z-10 p-6 flex flex-col text-white text-left">
                 <h3 className="text-2xl font-bold underline mb-2">{title}</h3>
-                <p className="text-base max-w-xs">{desc}</p>
+                <p className="text-lg italic mb-3">{subtitle}</p>
+                <p className="text-sm mb-4">{objective}</p>
+                <ul className="text-sm list-disc list-inside space-y-1">
+                  {concepts.map((concept, i) => (
+                    <li key={i}>{concept}</li>
+                  ))}
+                </ul>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </section>
+
 
       {/* REVIEWS */}
       <section className="bg-[#0f3f66] py-16 fade-section">
@@ -293,8 +406,11 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
           <div className="col-span-2">
             <div className="flex items-center space-x-2 mb-2">
-              <img src="/Handover1.png" alt="Logo" className="h-8 w-8" />
-              <span className="text-lg font-bold">Youth Ignition Hub</span>
+              <img src="/2c.png" alt="Logo" className="h-26 w-26" />
+              <div className="flex flex-col mt-10">
+                <span className="text-lg font-bold">Youth Ignition Hub</span>
+                <span className="text-sm text-white tracking-wide">Ignite. Impact. Transform</span>
+              </div>
             </div>
             <p className="text-gray-400">
               Ignite Potential. Impact Communities. Transform the World.
