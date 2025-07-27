@@ -209,12 +209,12 @@ export default function HomePage() {
       {/* MISSION */}
       <section className="relative pt-80 pb-10 px-4 text-center fade-section">
         {/* Background Image */}
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/3.jpg')" }}></div>
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/b.png')" }}></div>
 
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
 
-        {/* Optional Bottom Gradient */}
+        {/* Bottom Gradient */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent z-0"></div>
 
         {/* Content */}

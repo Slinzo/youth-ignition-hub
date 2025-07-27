@@ -172,8 +172,11 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-sm">
           <div className="col-span-2">
             <div className="flex items-center space-x-2 mb-2">
-              <img src="/Handover1.png" alt="Logo" className="h-8 w-8" />
-              <span className="text-lg font-bold">Youth Ignition Hub</span>
+              <img src="/2c.png" alt="Logo" className="h-26 w-26" />
+              <div className="flex flex-col mt-10">
+                <span className="text-lg font-bold">Youth Ignition Hub</span>
+                <span className="text-sm text-white tracking-wide">Ignite. Impact. Transform</span>
+              </div>
             </div>
             <p className="text-gray-400">
               Ignite Potential. Impact Communities. Transform the World.
@@ -194,11 +197,26 @@ export default function AboutPage() {
               <li>Email: <a href="mailto:info@youthignitionhub.org" className="hover:underline">info@youthignitionhub.org</a></li>
               <li>Phone: +00 000 0000</li>
               <li className="flex space-x-3 mt-4">
-                <a href="https://www.facebook.com/" className="w-10 h-10 rounded-full bg-black text-blue-600 flex items-center justify-center hover:bg-blue-200 transition"><FaFacebookF /></a>
-                <a href="https://www.instagram.com/" className="w-10 h-10 rounded-full bg-black text-pink-500 flex items-center justify-center hover:bg-pink-200 transition"><FaInstagram /></a>
-                <a href="https://x.com/?lang=en-za" className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-700 transition"><FaXTwitter /></a>
-                <a href="https://www.linkedin.com/" className="w-10 h-10 rounded-full bg-black text-blue-700 flex items-center justify-center hover:bg-blue-200 transition"><FaLinkedinIn /></a>
-                <a href="https://www.youtube.com/" className="w-10 h-10 rounded-full bg-black text-red-600 flex items-center justify-center hover:bg-red-200 transition"><FaYoutube /></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-black text-blue-600 flex items-center justify-center hover:bg-blue-200 transition">
+                  <FaFacebookF />
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-black text-pink-500 flex items-center justify-center hover:bg-pink-200 transition">
+                  <FaInstagram />
+                </a>
+                <a href="https://x.com/?lang=en-za" target="_blank" rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-700 transition">
+                  <FaXTwitter />
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-black text-blue-700 flex items-center justify-center hover:bg-blue-200 transition">
+                  <FaLinkedinIn />
+                </a>
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-black text-red-600 flex items-center justify-center hover:bg-red-200 transition">
+                  <FaYoutube />
+                </a>
               </li>
             </ul>
           </div>
