@@ -207,7 +207,7 @@ export default function HomePage() {
 
 
       {/* MISSION */}
-      <section className="relative pt-80 pb-10 px-4 text-center fade-section">
+      <section className="relative pt-140 pb-10 px-4 text-center fade-section">
         {/* Background Image */}
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/b.png')" }}></div>
 
